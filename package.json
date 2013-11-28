@@ -24,7 +24,7 @@
     "uglify-js": "2.4.4",
     "jade": "*",
     "less-middleware": "*",
-    "sqlite3": "https://github.com/mapbox/node-sqlite3/archive/master.tar.gz"
+    "sqlite3": "2.1.19"
   },
   "devDependencies": {
   	"mocha": "~1.14"
