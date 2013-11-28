@@ -1,0 +1,22 @@
+{
+  "name": "node-PiTemp",
+  "version": "0.0.0",
+  "author": "Albert <nebuchar@gmail.com>",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/nebuchar/node-PiTemp.git"
+  },
+  "keywords": [
+  	"raspberry",
+    "pi",
+    "temp"
+  ],
+  "dependencies": {
+  	"sqlite3": "~2.1"
+  },
+  "analyze": false,
+  "license": "MIT",
+  "engines": {
+    "node": ">=0.10.22",
+  }
+}
