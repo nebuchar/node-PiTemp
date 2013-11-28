@@ -6,3 +6,5 @@ PiTemp build on node.js
 
 # USAGE
 
+$ apt-get install nodejs
+
