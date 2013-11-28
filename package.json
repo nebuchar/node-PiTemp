@@ -6,21 +6,26 @@
     "type": "git",
     "url": "https://github.com/nebuchar/node-PiTemp.git"
   },
+  "bugs": {
+    "url": "https://github.com/nebuchar/node-PiTemp/issues"
+  },
   "keywords": [
     "raspberry",
     "pi",
     "temp"
   ],
   "dependencies": {
-  	"sqlite3": "https://github.com/mapbox/node-sqlite3/archive/master.tar.gz",
-  	"vows": "latest"
+  	"sqlite3": "https://github.com/mapbox/node-sqlite3/archive/master.tar.gz"
+  },
+  "devDependencies": {
+  	"mocha": "~1.14"
   },
   "analyze": false,
   "license": "MIT",
   "engines": {
-    "node": ">=0.10.22"
+    "node": "0.10.x"
   },
   "scripts": {
-  	"test": "vows --spec"
+  	"test": "make test"
   }
 }
