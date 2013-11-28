@@ -1,6 +1,7 @@
 {
   "name": "node-PiTemp",
-  "version": "0.0.0",
+  "version": "0.0.1",
+  "private": true,
   "author": "Albert <nebuchar@gmail.com>",
   "repository": {
     "type": "git",
@@ -14,18 +15,21 @@
     "pi",
     "temp"
   ],
+  "scripts": {
+    "start": "node app.js",
+    "test": "make test"
+  },
   "dependencies": {
-  	"sqlite3": "https://github.com/mapbox/node-sqlite3/archive/master.tar.gz"
+    "express": "3.4.5",
+    "jade": "*",
+    "less-middleware": "*",
+    "sqlite3": "https://github.com/mapbox/node-sqlite3/archive/master.tar.gz"
   },
   "devDependencies": {
   	"mocha": "~1.14"
   },
-  "analyze": false,
   "license": "MIT",
   "engines": {
     "node": "0.10.x"
-  },
-  "scripts": {
-  	"test": "make test"
   }
 }
