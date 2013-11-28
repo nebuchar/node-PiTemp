@@ -7,16 +7,16 @@
     "url": "https://github.com/nebuchar/node-PiTemp.git"
   },
   "keywords": [
-  	"raspberry",
+    "raspberry",
     "pi",
     "temp"
   ],
   "dependencies": {
-  	"sqlite3": "~2.1"
+  	"sqlite3": "https://github.com/mapbox/node-sqlite3/archive/master.tar.gz"
   },
   "analyze": false,
   "license": "MIT",
   "engines": {
-    "node": ">=0.10.22",
+    "node": ">=0.10.22"
   }
 }
