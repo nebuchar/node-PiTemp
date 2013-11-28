@@ -12,11 +12,15 @@
     "temp"
   ],
   "dependencies": {
-  	"sqlite3": "https://github.com/mapbox/node-sqlite3/archive/master.tar.gz"
+  	"sqlite3": "https://github.com/mapbox/node-sqlite3/archive/master.tar.gz",
+  	"vows": "latest"
   },
   "analyze": false,
   "license": "MIT",
   "engines": {
     "node": ">=0.10.22"
+  },
+  "scripts": {
+  	"test": "vows --spec"
   }
 }
