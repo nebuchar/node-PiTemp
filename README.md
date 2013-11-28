@@ -10,6 +10,6 @@ wget http://nodejs.org/dist/v0.10.21/node-v0.10.21-linux-arm-pi.tar.gz
 tar xzvf node-v0.10.21-linux-arm-pi.tar.gz
 $ mdkir /opt/node
 $ cp node-v0.10.21-linux-arm-pi/* /opt/node
-$ apt-get install sqlite3
+$ apt-get install sqlite3 build-essential g++
 
 

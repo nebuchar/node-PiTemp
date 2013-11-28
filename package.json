@@ -23,7 +23,8 @@
     "express": "3.4.5",
     "uglify-js": "2.4.4",
     "jade": "*",
-    "less-middleware": "*"
+    "less-middleware": "*",
+    "sqlite3": "*"
   },
   "devDependencies": {
   	"mocha": "~1.14"
