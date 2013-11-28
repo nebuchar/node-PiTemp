@@ -1,4 +1,4 @@
-# NAME
+# PiTemp
 
 PiTemp build on node.js
 
