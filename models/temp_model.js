@@ -1,3 +1,4 @@
+var async = require('async');
 var sqlite3 = require('sqlite3').verbose();
 var db = new sqlite3.Database('./db/db.sqlite');
 
@@ -51,7 +52,7 @@ temp_model.getValues = function(date, callback){
 temp_model.getValuesLast24Hours = function(callback){
 	var time = new Date();
 	this.getValues(time.setDate(new Date().getDate()-1), function(result){
-		callback(result);
+		callback(null, result);
 	});
 	
 } 
@@ -59,30 +60,23 @@ temp_model.getValuesLast24Hours = function(callback){
 temp_model.getValuesLastWeek = function(callback){
 	var time = new Date();
 	this.getValues(time.setDate(new Date().getDate()-7), function(result){
-		callback(result);
+		callback(null, result);
 	});
 } 
 //Last month
 temp_model.getValuesLastMonth = function(callback){
 	var time = new Date();
 	this.getValues(time.setDate(new Date().getMonth()-1), function(result){
-		callback(result);
+		callback(null, result);
 	});
 } 
 temp_model.getAllValues = function(callback){
 	var myself = this;
-	var results = {};
-	myself.getValuesLast24Hours(function(result){
-		results.valuesLast24Hours = result;
-		myself.getValuesLastWeek(function(result){
-			results.valuesLastWeek = result;
-			myself.getValuesLastMonth(function(result){
-				results.valuesLastMonth = result;
-				callback(results);
-			});
-			
-		});
-	});
+	async.parallel({
+		valuesLast24Hours: temp_model.getValuesLast24Hours.bind(temp_model),
+		valuesLastWeek: temp_model.getValuesLastWeek.bind(temp_model),
+		valuesLastMonth: temp_model.getValuesLastMonth.bind(temp_model)
+	}, callback);
 	
 }
 //Export the module

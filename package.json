@@ -24,7 +24,8 @@
     "uglify-js": "2.4.4",
     "jade": "*",
     "less-middleware": "*",
-    "sqlite3": "*"
+    "sqlite3": "*",
+    "async": "*"
   },
   "devDependencies": {
   	"mocha": "~1.14"
