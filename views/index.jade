@@ -3,7 +3,7 @@ extends layout
 block content
 	.row.col-md-12
 		h3 Last 24h
-		.col-md-9#day
+		.col-md-9#day(style='height:300px')
 		.col-md-2.well
 			p Average:
 				strong.text-righ #{data.valuesLast24Hours.averages}
@@ -13,7 +13,7 @@ block content
 				strong.text-righ #{data.valuesLast24Hours.highest}
 	.row.col-md-12		
 		h3 Last week
-		.col-md-9#week
+		.col-md-9#week(style='height:300px')
 		.col-md-2.well
 			p Average:
 				strong.text-righ  #{data.valuesLastWeek.averages}
@@ -23,7 +23,7 @@ block content
 				strong.text-righ #{data.valuesLastWeek.highest}	
 	.row.col-md-12				
 		h3 Last month
-		.col-md-9#month
+		.col-md-9#month(style='height:300px')
 		.col-md-2.well
 			p Average:
 				strong.text-righ #{data.valuesLastMonth.averages}

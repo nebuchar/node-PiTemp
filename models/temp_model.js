@@ -40,7 +40,8 @@ temp_model.getValues = function(date, callback){
 	}, function(err, num_rows){
 		if(num_rows > 0){
 			result = {
-				averages : myself.average(values),
+				points: JSON.stringify(values),
+				averages: myself.average(values),
 				lowest: myself.getMin(values),
 				highest: myself.getMax(values)
 			}
