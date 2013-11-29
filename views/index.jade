@@ -1,17 +1,19 @@
 extends layout
 
 block content
-  h1= title
-  p Welcome to #{title} 
-  h2 Last 24h
-  p Average: #{data.valuesLast24Hours.averages}
-  p Lowest: #{data.valuesLast24Hours.lowest}
-  p Highest: #{data.valuesLast24Hours.highest}
-  h2 Last week
-  p Average: #{data.valuesLastWeek.averages}
-  p Lowest: #{data.valuesLastWeek.lowest}
-  p Highest: #{data.valuesLastWeek.highest}
-  h2 Last month
-  p Average: #{data.valuesLastMonth.averages}
-  p Lowest: #{data.valuesLastMonth.lowest}
-  p Highest: #{data.valuesLastMonth.highest}
+	.row
+		.col-md-12
+			h1= title
+			p Welcome to #{title} 
+			h2 Last 24h
+			p Average: #{data.valuesLast24Hours.averages}
+			p Lowest: #{data.valuesLast24Hours.lowest}
+			p Highest: #{data.valuesLast24Hours.highest}
+			h2 Last week
+			p Average: #{data.valuesLastWeek.averages}
+			p Lowest: #{data.valuesLastWeek.lowest}
+			p Highest: #{data.valuesLastWeek.highest}
+			h2 Last month
+			p Average: #{data.valuesLastMonth.averages}
+			p Lowest: #{data.valuesLastMonth.lowest}
+			p Highest: #{data.valuesLastMonth.highest}
