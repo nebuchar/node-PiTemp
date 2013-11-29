@@ -1,19 +1,33 @@
 extends layout
 
 block content
-	.row
-		.col-md-12
-			h1= title
-			p Welcome to #{title} 
-			h2 Last 24h
-			p Average: #{data.valuesLast24Hours.averages}
-			p Lowest: #{data.valuesLast24Hours.lowest}
-			p Highest: #{data.valuesLast24Hours.highest}
-			h2 Last week
-			p Average: #{data.valuesLastWeek.averages}
-			p Lowest: #{data.valuesLastWeek.lowest}
-			p Highest: #{data.valuesLastWeek.highest}
-			h2 Last month
-			p Average: #{data.valuesLastMonth.averages}
-			p Lowest: #{data.valuesLastMonth.lowest}
-			p Highest: #{data.valuesLastMonth.highest}
+	.row.col-md-12
+		h3 Last 24h
+		.col-md-9#day
+		.col-md-2.well
+			p Average:
+				strong.text-righ #{data.valuesLast24Hours.averages}
+			p Lowest:
+				strong.text-righ #{data.valuesLast24Hours.lowest}
+			p Highest:
+				strong.text-righ #{data.valuesLast24Hours.highest}
+	.row.col-md-12		
+		h3 Last week
+		.col-md-9#week
+		.col-md-2.well
+			p Average:
+				strong.text-righ  #{data.valuesLastWeek.averages}
+			p Lowest:
+				strong.text-righ #{data.valuesLastWeek.lowest}
+			p Highest:
+				strong.text-righ #{data.valuesLastWeek.highest}	
+	.row.col-md-12				
+		h3 Last month
+		.col-md-9#month
+		.col-md-2.well
+			p Average:
+				strong.text-righ #{data.valuesLastMonth.averages}
+			p Lowest:
+				strong.text-righ #{data.valuesLastMonth.lowest}
+			p Highest:
+				strong.text-righ #{data.valuesLastMonth.highest}
