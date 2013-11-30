@@ -41,19 +41,20 @@ html
 				//Day
 				var dataDay = [{
 					color: "rgb(212,62, 48)",
-					data: #{data.valuesLast24Hours.points}
+					data: "#{data.valuesLast24Hours.points}"
 				}];
+				console.log(JSON.parse(dataDay[0].data));
 				$.plot($("#day"), dataDay, options);
 				//Week
 				var dataWeek = [{
 					color: "rgb(212,62, 48)",
-					data: #{data.valuesLastWeek.points}
+					data: "#{data.valuesLastWeek.points}"
 				}];
 				$.plot($("#week"), dataWeek, options);
 				//Month
 				var dataMonth = [{
 					color: "rgb(212,62, 48)",
-					data: #{data.valuesLastMonth.points}
+					data: "#{data.valuesLastMonth.points}"
 				}];
 				$.plot($("#month"), dataMonth, options);
 			});

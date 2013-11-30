@@ -7,43 +7,44 @@ var temp_model = {};
 temp_model.average = function(values, callback){
 	var total = 0;
     var count = 0;
-    values.forEach(function(value){
-    	total += value;
+    for (var key in values) {
+    	total += values[key];
     	count++;
-    });
+    }
     return Math.round(total/count).toFixed(1);
 }
 temp_model.getMin = function(values, callback){
 	var lowest  = null;
-    values.forEach(function(value){
-    	if (lowest === null || value < lowest) {
-    		lowest = value;
+	for (var key in values) {
+		if (lowest === null || values[key] < lowest) {
+    		lowest = values[key];
     	}
-    });
+	}
     return lowest.toFixed(1);
 }
 temp_model.getMax = function(values, callback){
 	var highest  = null;
-    values.forEach(function(value){
-    	if (highest === null || value > highest) {
-    		highest = value;
+	for (var key in values) {
+		if (highest === null || values[key] > highest) {
+    		highest = values[key];
     	}
-    });
+	}
     return highest.toFixed(1);
 }
 temp_model.getValues = function(date, callback){
 	var myself = this;
-	var values = [];
+	var values = {};
 	var result = {};
 	db.each("SELECT * FROM temp_log WHERE time > ?", date, function(err, row) {
-		values.push(row.temp);
+		values[parseInt(row.time)] = row.temp;
 	}, function(err, num_rows){
 		if(num_rows > 0){
+			console.log(values);
 			result = {
 				points: JSON.stringify(values),
-				averages: myself.average(values),
-				lowest: myself.getMin(values),
-				highest: myself.getMax(values)
+				//averages: myself.average(values),
+				//lowest: myself.getMin(values),
+				//highest: myself.getMax(values)
 			}
 		}
 		callback(result);
